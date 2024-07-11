@@ -76,19 +76,25 @@
 
 
 <script type="module">
-    const url = 'https://api.restful-api.dev/objects/4';
+    const url = 'https://todo-list-backend-app.fly.dev/api/signup';
     const options = {
-        method: 'GET',
-        headers: {
-            'x-rapidapi-key': 'Sign Up for Key',
-            'x-rapidapi-host': 'covid-19-data.p.rapidapi.com'
-        }
+        method: 'POST',
+        // headers: {
+        //     'x-rapidapi-key': 'Sign Up for Key',
+        //     'x-rapidapi-host': 'covid-19-data.p.rapidapi.com'
+        // }
     };
 
     try {
         const response = await fetch(url, options);
+
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
         const result = await response.text();
-        console.log(result);
+        console.log("Status: " + response.status)
+        console.log("Result: " +result);
     } catch (error) {
         console.error(error);
     }
