@@ -79,10 +79,8 @@
     const url = 'https://todo-list-backend-app.fly.dev/api/signup';
     const options = {
         method: 'POST',
-        // headers: {
-        //     'x-rapidapi-key': 'Sign Up for Key',
-        //     'x-rapidapi-host': 'covid-19-data.p.rapidapi.com'
-        // }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email:'nazli@gmail.com' , name: 'John Doe', password: 'password@222' })
     };
 
     try {
