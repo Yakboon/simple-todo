@@ -1,4 +1,4 @@
-body {
+/*body {
     height: 100vh;
     width: 100%;
     background-color: black;
@@ -65,3 +65,132 @@ button {
     background-color: #4d4d4d;
     width: 80%;
 }
+    */
+.right h2{
+    font-size: 26px;
+    position: absolute;
+    top: 57px;
+    left: 552px;
+    padding-left: 150px;
+    padding-top: 30px;
+    color:rgb(112, 158, 208);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} 
+.right img{
+    position: absolute;
+    top: 60px;
+    left: 700px ;
+    width: 700px;
+}   
+.left{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+#input-names{
+    width: 155px;
+    height: 40px;
+  
+}
+.left label{
+    font-size: 16px;
+    color: rgb(126, 128, 128);
+    font-family: 'lato',sans-serif;
+}
+.left table tr td{
+    padding-bottom: 12px;
+}
+.left input{
+    width: 330px;
+    height: 42px;
+    background: white;
+    border: 1px,solid,black;
+    border-radius: 5px;
+}
+#items {
+    width: 330px;
+    height: 42px;
+    text-align: center;
+    text-align-last: center; /* Seçili öğeyi ortalar */
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(126, 128, 128);
+    margin-top: 8px;
+   
+}
+
+input, select {
+    margin: 0px 0; /* Yukarı ve aşağıdaki boşlukları azalt */
+    box-sizing: border-box;
+}
+td {
+    padding: 8px;
+}
+#sign-up {
+    width: 135px;
+    height: 42px;
+    border-radius: 5px;
+    border: 1px,solid,rgb(6,42,228);
+    color: rgb(255, 255, 255);
+    background-color: rgb(6,42,228);
+    font-family: 'lato',sans-serif;
+    position: absolute;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight:bolder;
+    left: 110px;
+   }
+   #sign-up:hover{
+    text-shadow: 0 0 20px 0px rgba(33, 102, 231, 0.2);
+    cursor: pointer;
+    scale: 1.05;
+
+   }
+   .sign-in p{
+    padding-top: 480px;
+    font-size: 14px;
+    padding-left: 220px;
+   }
+   .sign-in a{
+    color:  rgb(6,42,228);
+    padding-left: 2px;
+   }
+   .sign-in a:hover{
+    font-weight: bold;
+    scale: 2;
+   }
+  .or button{
+    width: 150px;
+    height: 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: white;
+  }
+  .or span{
+   color: rgb(126, 128, 128);
+   font-size: 18px;
+   margin: 10px;
+    }
+
+  .or {
+    padding-left: 145px;
+  } 
+  
+  .icon{
+    font-size: 50px;
+    margin-left: 75px;
+    margin-top: 150px;
+  }
+
+  .icon a{
+   color: rgb(6,42,228);
+   padding-right: 15px;
+  }
+
+
+
