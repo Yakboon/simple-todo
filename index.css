@@ -191,10 +191,20 @@ td {
    color: rgb(6,42,228);
    padding-right: 15px;
   }
+
   .logo img{
     margin-top: 15px;
     margin-left: 13px;
   }
+
+  .heading{
+    font-family:'lato',sans-serif ;
+    font-size: 23px;
+    color: rgb(112, 158, 208);
+    text-align: center;
+    padding-top: 20px;
+    }
+    
 
 
 
