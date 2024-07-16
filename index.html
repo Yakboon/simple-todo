@@ -4,99 +4,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <title>to do list</title>
-    <link rel="stylesheet" href="index.css">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="register">
-      <div class="right">
-        <h2>Big or small, every task matters—start making progress today!</h2>
-        <img src="style/download (5).png" alt="">
-      </div>
+  <div class="register">
+    <div class="right">
+      <h2>Big or small, every task matters—start making progress today!</h2>
+      <img src="style/download (5).png" alt="">
     </div>
-    <div class="left-top">
-      <img src="style/logo-todolist.png" alt="">
-    </div>
-    <div class="left">
-      <div class="boxes">
+  </div>
+  <div class="left-top">
+    <img src="style/logo-todolist.png" alt="">
+  </div>
+  <div class="left">
+    <div class="boxes">
+      <form id="signup-form">  
         <table>
           <tr>
             <td>
               <label for="fname">First Name</label><br>
-              <input type="text" name="fname" id="input-names">
+              <input type="text" name="fname" id="fname" required>
             </td>
             <td>
               <label for="lname">Last Name</label><br>
-              <input type="text" name="lname" id="input-names">
+              <input type="text" name="lname" id="lname" required>
             </td>
           </tr>
           <tr>
             <td colspan="2">
               <label for="email">E-mail</label><br>
-              <input type="email" name="email">
+              <input type="email" name="email" id="email" required>
             </td>
           </tr>
           <tr>
             <td colspan="2">
               <label for="password">Password</label><br>
-              <input type="password" name="password">
+              <input type="password" name="password" id="password" required>
             </td>
           </tr>
           <tr>
             <td colspan="2">
-               <select id="items" name="items" >
+              <select id="items" name="items" required>
                 <option value="" disabled selected>--------Select One--------</option>
-                  <option value="item1">I'm interested in using to do list for my company</option>
-                  <option value="item2">I'm interested in using to do list as my personal assistant</option>
-                  <option value="item3">I'm interested in using to do list as a reminder</option>
-               </select>
+                <option value="item1">I'm interested in using to do list for my company</option>
+                <option value="item2">I'm interested in using to do list as my personal assistant</option>
+                <option value="item3">I'm interested in using to do list as a reminder</option>
+              </select>
             </td>
           </tr>
           <tr>
             <td>
-              <button id="sign-up">Sign up</button>
+              <button type="submit" id="sign-up">Sign up</button>
             </td>
           </tr>
-       </table>
-      </div>
-      <div class="icon">
-        <a class="ic" href="#"><ion-icon name="logo-google"></ion-icon></a>
-        <a class="ic" href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-        <a class="ic" id="apple" href="#"><ion-icon name="logo-apple"></ion-icon></a>
+        </table>
+      </form>
     </div>
+    <div class="icon">
+      <a class="ic" href="#"><ion-icon name="logo-google"></ion-icon></a>
+      <a class="ic" href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+      <a class="ic" id="apple" href="#"><ion-icon name="logo-apple"></ion-icon></a>
     </div>
-    <div class="sign-in">
-      <p>Already have an acount? <a href="#">Sign in</a></p>
-       <div class="or">
-        <button></button><span>Or</span><button id="right-button"></button>
-       </div>
-
+  </div>
+  <div class="sign-in">
+    <p>Already have an account? <a href="#">Sign in</a></p>
+    <div class="or">
+      <button></button><span>Or</span><button id="right-button"></button>
     </div>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <script type="module">
+    document.getElementById('signup-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        
+        const fname = document.getElementById('fname').value;
+        const lname = document.getElementById('lname').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const items = document.getElementById('items').value;
 
+        console.log({ fname, lname, email, password, items }); // Log form data
+        
+        const url = 'https://todo-list-backend-app.fly.dev/api/signup';
+        const options = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ fname, lname, email, password, items })
+        };
 
-<script type="module">
-    const url = 'https://todo-list-backend-app.fly.dev/api/signup';
-    const options = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email:'nazli@gmail.com' , name: 'John Doe', password: 'password@222' })
-    };
+        try {
+            const response = await fetch(url, options);
 
-    try {
-        const response = await fetch(url, options);
+            console.log(response); // Log response for debugging
 
-        if (!response.ok) {
-            throw new Error(`Response status: ${response.status}`);
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+            
+            const result = await response.json();
+            console.log("Status: " + response.status);
+            console.log("Result: " + JSON.stringify(result));
+            document.getElementById('signup-form').reset();
+            setTimeout(() => {
+                window.location.reload();
+            }, 500);
+        
+        } catch (error) {
+            console.error('Error:', error);
         }
-
-        const result = await response.text();
-        console.log("Status: " + response.status)
-        console.log("Result: " +result);
-    } catch (error) {
-        console.error(error);
-    }
-</script>
+    });
+  </script>
 </body>
-
 </html>
