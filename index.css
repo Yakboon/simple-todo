@@ -198,7 +198,7 @@ td {
   }
 
   .heading{
-    font-family:'lora',sans-serif ;
+    font-family:'Lora',sans-serif ;
     font-size: 23px;
     color: rgb(112, 158, 208);
     text-align: center;
@@ -237,6 +237,26 @@ td {
         font-size: 16px;
         font-family: 'lato',sans-serif;
         margin-left: 100px;
+        margin-top: 30px;
+    }
+
+    .or-log-in-page button{
+        width: 130px;
+        height: 10px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: white;
+    }
+
+    .or-log-in-page span{
+        color:  rgb(126, 128, 128);
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    .or-log-in-page{
+       margin-left: 582px;
         margin-top: 30px;
     }
 
