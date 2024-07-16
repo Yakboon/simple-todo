@@ -198,13 +198,47 @@ td {
   }
 
   .heading{
-    font-family:'lato',sans-serif ;
+    font-family:'lora',sans-serif ;
     font-size: 23px;
     color: rgb(112, 158, 208);
     text-align: center;
     padding-top: 20px;
     }
+
+    .form-log-in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 35px;
+    }
+
+   
+    .form-log-in label{
+        font-size: 16px;
+        font-family: 'lato', sans-serif;
+        color:  rgb(126, 128, 128);
+    }
     
+    .form-log-in input{
+        width: 330px;
+        height: 42px;
+        border-radius: 5px;
+    }
+
+    #sign-in-button button{
+        width: 130px;
+        height: 35px;
+        border-radius: 5px;
+        align-content: center;
+        background-color: rgb(6,42,228);
+        border: 1px,solid,rgb(6,42,228);
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        font-family: 'lato',sans-serif;
+        margin-left: 100px;
+        margin-top: 30px;
+    }
 
 
 
